@@ -224,6 +224,7 @@ public class VfsBrowser extends Composite {
 
       public void mouseDown(MouseEvent arg0) {
         if (arg0.button == 3) {
+          popupMenu.setLocation( popupMenu.getDisplay().getCursorLocation() );
           popupMenu.setVisible(true);
         } else {
         }
@@ -295,7 +296,7 @@ public class VfsBrowser extends Composite {
       if (text == null) {
         text = defaultText;
       }
-      TextInputDialog textDialog = new TextInputDialog(Messages.getString("VfsBrowser.enterNewFilename"), text, 500, 100); //$NON-NLS-1$
+      TextInputDialog textDialog = new TextInputDialog(Messages.getString("VfsBrowser.enterNewFilename"), text, 500, 120); //$NON-NLS-1$
       text = textDialog.open();
       if (text != null && !"".equals(text)) { //$NON-NLS-1$
         try {
