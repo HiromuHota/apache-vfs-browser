@@ -222,6 +222,7 @@ public class VfsBrowser extends Composite {
 
       public void mouseDown(MouseEvent arg0) {
         if (arg0.button == 3) {
+          popupMenu.setLocation( popupMenu.getDisplay().getCursorLocation() );
           popupMenu.setVisible(true);
         } else {
         }
