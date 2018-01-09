@@ -48,6 +48,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.pentaho.di.core.Const;
 import org.pentaho.vfs.messages.Messages;
 
 import java.io.File;
@@ -223,12 +224,12 @@ public class VfsFileChooserDialog implements SelectionListener, MouseListener, V
       CustomVfsUiPanel localPanel = new CustomVfsUiPanel( FILE_SCHEME, "Local", this, SWT.None ) {
         public void activate() {
           try {
-            File startFile = new File( System.getProperty( "user.home" ) );
+            File startFile = new File( Const.getKettleUserDataDirectory() );
             if ( startFile == null || !startFile.exists() ) {
               startFile = File.listRoots()[ 0 ];
             }
             FileObject dot = resolver.resolveFile( startFile.toURI().toURL().toExternalForm() );
-            rootFile = dot.getFileSystem().getRoot();
+            rootFile = resolver.resolveFile( Const.getKettleUserDataDirectory() );
             selectedFile = rootFile;
             setInitialFile( selectedFile );
             openFileCombo.setText( selectedFile.getName().getURI() );

@@ -35,6 +35,12 @@
   </properties>
   <dependencies>
     <dependency>
+      <groupId>pentaho-kettle</groupId>
+      <artifactId>kettle-core</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
       <version>${commons-collections.version}</version>
@@ -93,12 +99,6 @@
       <artifactId>oro</artifactId>
       <version>${oro.version}</version>
       <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.swt</groupId>
-      <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-      <version>${org.eclipse.swt.version}</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
