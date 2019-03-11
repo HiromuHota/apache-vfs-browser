@@ -25,7 +25,6 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh '''
-                    export PATH=$PATH:$HOME/go/bin
                     github-release delete --user $username --repo $repo --tag webspoon/$version || true
                     git tag -f webspoon/$version
                     git push -f https://${GITHUB_TOKEN}@github.com/$username/$repo.git webspoon/$version
