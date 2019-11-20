@@ -2,7 +2,7 @@ branches:
   only:
     - /^webspoon-.*$/
 language: java
-jdk: oraclejdk8
+jdk: openjdk8
 cache:
   directories:
   - "$HOME/.m2"
