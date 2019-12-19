@@ -23,7 +23,7 @@
     <developerConnection>scm:git:git@github.com:pentaho/apache-vfs-browser.git</developerConnection>
   </scm>
   <properties>
-    <rap.version>3.9.0</rap.version>
+    <rap.version>3.11.0</rap.version>
     <org.eclipse.swt.version>4.6</org.eclipse.swt.version>
     <commons-io.version>1.4</commons-io.version>
     <mail.version>1.6.1</mail.version>
@@ -137,5 +137,13 @@
       </snapshots>
     </repository>
   </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub OWNER Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/HiromuHota/apache-vfs-browser</url>
+    </repository>
+  </distributionManagement>
 
 </project>
